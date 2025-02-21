@@ -1,39 +1,72 @@
-<style>
-body {
-  background: #00091B;
-  color: #fff;
-}
-@keyframes fadeIn {
-  from {top: 20%; opacity: 0;}
-  to {top: 100; opacity: 1;}
-  
-}
-@-webkit-keyframes fadeIn {
-  from {top: 20%; opacity: 0;}
-  to {top: 100; opacity: 1;}
-  
-}
-.wrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  animation: fadeIn 1000ms ease;
-  -webkit-animation: fadeIn 1000ms ease;
-  
-}
-h1 {
-  font-size: 50px;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 0;
-  line-height: 1;
-  font-weight: 700;
-}
-.dot {
-  color: #4FEBFE;
-}
-</style>
-<div class="wrapper">
-  <h1>coming soon<span class="dot">.</span></h1>
- </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #00091B;
+      color: #fff;
+      margin: 0; /* Penting untuk reset margin default */
+      display: flex; /*Untuk mempermudah centering. Bisa juga pakai cara absolute positioning yang lama, tapi flexbox lebih modern */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Agar selalu mengisi tinggi viewport */
+      overflow: hidden; /*Menyembunyikan konten yang mungkin keluar dari layar*/
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .wrapper {
+      /*position: absolute;  <-- Tidak diperlukan lagi karena kita pakai flexbox
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);*/
+      animation: fadeIn 1s ease-in-out forwards;
+      -webkit-animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 5rem); /* Responsif */
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0;
+      line-height: 1;
+      font-weight: 700;
+      text-align: center; /* Agar teks rata tengah */
+    }
+
+    .dot {
+      color: #4FEBFE;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>coming soon<span class="dot">.</span></h1>
+  </div>
+</body>
+</html>
