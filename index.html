@@ -11,12 +11,12 @@
     body {
       background: #00091B;
       color: #fff;
-      margin: 0; /* Penting untuk reset margin default */
-      display: flex; /*Untuk mempermudah centering. Bisa juga pakai cara absolute positioning yang lama, tapi flexbox lebih modern */
+      margin: 0;
+      display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh; /* Agar selalu mengisi tinggi viewport */
-      overflow: hidden; /*Menyembunyikan konten yang mungkin keluar dari layar*/
+      min-height: 100vh;
+      overflow: hidden;
     }
 
     @keyframes fadeIn {
@@ -42,21 +42,17 @@
     }
 
     .wrapper {
-      /*position: absolute;  <-- Tidak diperlukan lagi karena kita pakai flexbox
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);*/
       animation: fadeIn 1s ease-in-out forwards;
       -webkit-animation: fadeIn 1s ease-in-out forwards;
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 5rem); /* Responsif */
+      font-size: clamp(2rem, 5vw, 5rem);
       font-family: 'Poppins', sans-serif;
       margin-bottom: 0;
       line-height: 1;
       font-weight: 700;
-      text-align: center; /* Agar teks rata tengah */
+      text-align: center;
     }
 
     .dot {
